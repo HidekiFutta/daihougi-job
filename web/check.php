@@ -159,7 +159,7 @@
               <input type="submit" formaction="./index.php" value="戻る" style="position: relative; left: 110px; top: 20px;"/>
 
               <?php if(!$tokenValidateError): ?>
-
+                <input type="submit" disabled value="送信する" style="position: relative; left: 130px; top: 20px;"/>
                 <input type="hidden" name="a" value="<?php echo $a; ?>">
                 <input type="hidden" name="title" value="<?php echo $title; ?>">
                 
