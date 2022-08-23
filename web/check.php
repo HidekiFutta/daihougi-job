@@ -63,7 +63,7 @@
    }
   pg_set_client_encoding("sjis");
     
-  $result = pg_query('SELECT id, 受付番号 FROM meibo');
+  $result = pg_query('SELECT id FROM meibo');
   
   if (!$result) {
       die('クエリーが失敗しました。'.pg_last_error());
@@ -73,10 +73,12 @@
  // print('id='.$rows['id']);
  // print(',count='.$rows['count'].'<br>');
   }
-  $a = $rows['受付番号'];
+  $a = $rows['id'];
+  
+  echo $i;
+  echo "OKOKOK";
   echo $a;
   
-  echo "OKOKOK";
   //https://tokkan.net/php/pos.html
   //pg_query($link, "UPDATE sanka SET count= $a WHERE id = '1'");   
   $close_flag = pg_close($link);
