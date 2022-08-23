@@ -10,7 +10,7 @@
     $Port     = "5432";
     $Password = "25745395931213ab49b31fe4048793c7d6067732b1a032ffcf47473858dcd6a1";
     //以上計12か所イベントごとに要変更
-    #$conn = "host=".$Host." "."port=".$Port." "."dbname=".$Database." "."user=".$User." "."password=".$Password;
+    $conn = "host=".$Host." "."port=".$Port." "."dbname=".$Database." "."user=".$User." "."password=".$Password;
     
     //  入力値の引継ぎ参考URL： https://gray-code.com/php/make-the-form-vol4/
     //　CSRF対策のワンタイムトークン発行    http://localhost/form.php
