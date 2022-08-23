@@ -96,8 +96,8 @@
     <title>内容確認画面</title>
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon.ico">
-
 </head>
+
 <body>
   <div>
     <form method="post" action="./send.php">
@@ -143,9 +143,8 @@
           </tr>
           <tr>
             <th style="text-align:left" colspan="2"> 
-　　          <?php if($b<$k_teiin): ?>          
-    　　　          <p>　この内容でよろしければ『送信する』ボタンを押して下さい．<br>
-    　変更が必要な場合は『戻る』ボタンで申請フォームに戻ります．</p>
+　　          <p>　この内容でよろしければ『送信する』ボタンを押して下さい．<br>
+    　変更が必要な場合は『戻る』ボタンで申請フォームに戻ります．      </p>
             </th>
           </tr>
         </tbody>
@@ -154,17 +153,13 @@
             <td colspan="2"> 
               <input type="hidden" name="input_text" value="<?php echo $text_value1; ?>">
               <input type="hidden" name="所属" value="<?php echo $text_value2; ?>">
-              <input type="hidden" name="email_1" value="<?php echo $text_value3; ?>">                       
+              <input type="hidden" name="email_1" value="<?php echo $text_value3; ?>">         
               <input type="hidden" name="Dナンバー" value="<?php echo $text_value7; ?>">
               <input type="hidden" name="ブロック" value="<?php echo $text_value8; ?>">
               <input type="submit" formaction="./index.php" value="戻る" style="position: relative; left: 110px; top: 20px;"/>
 
               <?php if(!$tokenValidateError): ?>
-                <?php if($b<$k_teiin): ?>
-                  　<input type="submit" value="送信する" style="position: relative; left: 130px; top: 20px;"/>
-                <?php else : ?>
-                    <input type="submit" disabled value="送信する" style="position: relative; left: 130px; top: 20px;"/>
-                <?php endif; ?>             
+
                 <input type="hidden" name="a" value="<?php echo $a; ?>">
                 <input type="hidden" name="title" value="<?php echo $title; ?>">
                 
@@ -172,9 +167,11 @@
                   //データを配列に
                   $list = array ($a,$text_value0,$text_value1, $text_value2, $text_value3, $text_value7,$text_value8,$title);
                   mb_convert_variables('Shift_JIS', 'UTF-8', $list);
-                ?>            
+                ?>   
+              <?php endif; ?>         
             </td>
           </tr>
+       
         </tfoot>
       </table>
     </form>
