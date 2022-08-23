@@ -86,7 +86,7 @@
                     <tr>
                         <th class="contact-item">大放技番号</th>
                         <td class="contact-body">
-                            <input type="number" name="Dナンバー" id ="dn" class="form-text3" value="<?php if( !empty($_POST['Dナンバー']) ){ echo $_POST['Dナンバー']; } ?>"/>
+                            <input type="number" name="Dナンバー" id ="dn" required="required"  placeholder="必須"　class="form-text3" value="<?php if( !empty($_POST['Dナンバー']) ){ echo $_POST['Dナンバー']; } ?>"/>
                         </td>
                     </tr>
                     
@@ -131,47 +131,7 @@
                 }else{
                   input.setCustomValidity(''); // エラーメッセージのクリア
                 }
-              }
-              function connecttext0(id, ischecked ) {
-                  // チェック状態に合わせて有効・無効を切り替える
-                  if(ischecked==true){
-                      document.getElementById("textforscb3").disabled = true;                               
-                      document.getElementById("dn").disabled = false;                 
-                      document.getElementById("bn").disabled = false;
-                  }
-              }
-              function connecttext1(id, ischecked ) {
-                  // チェック状態に合わせて有効・無効を切り替える
-                  if(ischecked==true){
-                      document.getElementById("textforscb3").disabled = true;                          
-                      document.getElementById("dn").disabled = true;                 
-                      document.getElementById("bn").disabled = true;
-                  }
-              }
-              function connecttext2(id, ischecked ) {
-                  // チェック状態に合わせて有効・無効を切り替える
-                  if(ischecked==true){
-                      document.getElementById("textforscb3").disabled = false;             
-                      document.getElementById("dn").disabled = true;                 
-                      document.getElementById("bn").disabled = true;
-                  }
-              }
-              function connecttext3(id, ischecked ) {
-                  // チェック状態に合わせて有効・無効を切り替える
-                  if(ischecked==true){
-                      document.getElementById("textforscb3").disabled = true;         
-                      document.getElementById("dn").disabled = true;                 
-                      document.getElementById("bn").disabled = true;
-                  }
-              }
-              function connecttext4(id, ischecked ) {
-                  // チェック状態に合わせて有効・無効を切り替える
-                  if(ischecked==true){
-                      document.getElementById("textforscb3").disabled = true;         
-                      document.getElementById("dn").disabled = true;                 
-                      document.getElementById("bn").disabled = true;
-                  }
-              }      
+              }    
               
             // -->
             </script>            
