@@ -60,7 +60,7 @@
                     <tr>
                         <th class="contact-item">氏　名</th>
                         <td class="contact-body">
-                            <input type="text" name="input_text" value="<?php if(!empty($_POST["input_text" ])) { echo htmlspecialchars($_POST["input_text"], ENT_QUOTES, "UTF-8");} ?>"　required="required"  placeholder="必須"　 class="form-text" />           
+                            <input type="text" name="input_text" value="<?php if(!empty($_POST["input_text" ])) { echo htmlspecialchars($_POST["input_text"], ENT_QUOTES, "UTF-8");} ?>" required="required" placeholder="必須" class="form-text" />           
                         </td>
                     </tr>
                     <tr>
