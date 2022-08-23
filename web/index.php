@@ -1,7 +1,7 @@
 <form method="post" action="./check.php">
   <?php
     //イベントによって変更する6箇所 + ZoomURL + DataBaseのURI5つ
-    $title =  '求人情報'; //あまり長くなると折り返すので注意！　52行目に代入
+    $title =  '求人情報取得フォーム'; //あまり長くなると折り返すので注意！　52行目に代入
     $Tanto_Address = "fujita@daihougi.ne.jp"; //開催担当責任者のメルアド　または　ML
     //Heroku- AppName- Resources- Herok Postgres- Setting- Database Credentials から
     $Host     = "ec2-44-205-63-142.compute-1.amazonaws.com"; 
@@ -31,7 +31,7 @@
 <html lang="ja">
     <head>
         <meta charset="utf-8" />
-        <meta name="description" content="大放技求人情報申請フォーム" />
+        <meta name="description" content="大放技求人情報取得フォーム" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>大放技登求人フォーム</title>
         <link rel="shortcut icon" href="/favicon.ico">
@@ -40,7 +40,7 @@
     </head>
     <body>
         <div class="contact">
-            <h1 class="contact-ttl" id="edit_area2"><?php echo $title?>申請フォーム</h1>       
+            <h1 class="contact-ttl" id="edit_area2"><?php echo $title?>情報取得フォーム</h1>       
             <form method="post" action="./check.php">
                 <table class="contact-table">
                     <tr>
@@ -50,7 +50,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <th class="contact-item">所属施設・学校名</th>
+                        <th class="contact-item">所属施設</th>
                         <td class="contact-body">
                             <input type="text" name="所属" required="required" placeholder="必須" class="form-text2" value="<?php if(!empty($_POST["所属" ])) { echo $_POST["所属" ]; }?>" />
                         </td>

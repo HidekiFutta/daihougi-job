@@ -91,7 +91,7 @@
 <html lang="ja">
 <head>
     <meta charset="utf-8" />
-    <meta name="description" content="大放技求人情報申請フォーム" />
+    <meta name="description" content="大放技求人情報取得フォーム" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>内容確認画面</title>
     <link rel="shortcut icon" href="/favicon.ico">
@@ -118,7 +118,7 @@
             </td>
           </tr>
           <tr>
-            <th width="170" align="Right">所属施設・学校名：</th>
+            <th width="170" align="Right">所属施設：</th>
             <td>
               <?php echo htmlspecialchars($_POST["所属"], ENT_QUOTES, "UTF-8"); ?>
             </td>
