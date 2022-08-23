@@ -1,7 +1,7 @@
 <form method="post" action="./check.php">
   <?php
     //イベントによって変更する6箇所 + ZoomURL + DataBaseのURI5つ
-    $title =  '求人案内'; //あまり長くなると折り返すので注意！　52行目に代入
+    $title =  '求人情報'; //あまり長くなると折り返すので注意！　52行目に代入
     $Tanto_Address = "fujita@daihougi.ne.jp"; //開催担当責任者のメルアド　または　ML
     //Heroku- AppName- Resources- Herok Postgres- Setting- Database Credentials から
     $Host     = "ec2-44-205-63-142.compute-1.amazonaws.com"; 
@@ -31,7 +31,7 @@
 <html lang="ja">
     <head>
         <meta charset="utf-8" />
-        <meta name="description" content="大放技求人案内申請フォーム" />
+        <meta name="description" content="大放技求人情報申請フォーム" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>大放技登求人フォーム</title>
         <link rel="shortcut icon" href="/favicon.ico">
