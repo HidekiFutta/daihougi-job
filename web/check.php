@@ -70,12 +70,12 @@
   } 
   for ($i = 0 ; $i < pg_num_rows($result) ; $i++){
       $rows = pg_fetch_array($result, NULL, PGSQL_ASSOC);
- // print('id='.$rows['id']);
+  print('id='.$rows['id']);
  // print(',count='.$rows['count'].'<br>');
   }
   $a = $rows['id'];
   
-  echo $i;
+  
   echo "OKOKOK";
   echo $a;
   
