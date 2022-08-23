@@ -73,9 +73,9 @@
  // print('id='.$rows['id']);
  // print(',count='.$rows['count'].'<br>');
   }
-
+  $a = $rows['id'];
   echo $a;
-  echo $b;
+  
   echo "OKOKOK";
   //https://tokkan.net/php/pos.html
   //pg_query($link, "UPDATE sanka SET count= $a WHERE id = '1'");   
