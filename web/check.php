@@ -63,7 +63,7 @@
    }
   pg_set_client_encoding("sjis");
     
-  $result = pg_query('SELECT id FROM meibo');
+  $result = pg_query('SELECT id, 受付番号 FROM meibo');
   
   if (!$result) {
       die('クエリーが失敗しました。'.pg_last_error());
@@ -73,7 +73,7 @@
  // print('id='.$rows['id']);
  // print(',count='.$rows['count'].'<br>');
   }
-  $a = $rows['id'];
+  $a = $rows['受付番号'];
   echo $a;
   
   echo "OKOKOK";
