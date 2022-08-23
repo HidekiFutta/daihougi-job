@@ -1,23 +1,15 @@
 <form method="post" action="./check.php">
   <?php
-
     //イベントによって変更する6箇所 + ZoomURL + DataBaseのURI5つ
     $title =  '求人案内'; //あまり長くなると折り返すので注意！　52行目に代入
-    #$kaisaibi="2022-09-09T20:00:00";  //開催終了後（時間）に受付を停止　244行目に代入
-    #$limit=   "2022-09-05T00:59:59";  //会場の締切日の指定 締切日の24時に締め切る　235行目に代入
-    #$k_teiin ="12";                   //会場の定員　95行目に代入
-    #$w_teiin ="80";                   //Webの定員　91行目に代入
     $Tanto_Address = "fujita@daihougi.ne.jp"; //開催担当責任者のメルアド　または　ML
-    //Zoom URL
-    #$zoom  = "https://us02web.zoom.us/j/84539657732?pwd=VklacFRIRW5Fc0ozTE5IVlBydTRPZz09";
     //Heroku- AppName- Resources- Herok Postgres- Setting- Database Credentials から
-    ##$Host     = "ec2-52-204-157-26.compute-1.amazonaws.com"; 
-    #$Database = "d7pinb99h51vmk";
-    ##$User     = "ozzibpqrkkvzsf";
-    ##$Port     = "5432";
-    $Password = "03213684bb9e332ddf3f2a9e4db5257dbe81aa8e3945ec0815b64bea734627f6";
+    $Host     = "ec2-44-205-63-142.compute-1.amazonaws.com"; 
+    $Database = "d5s5rn13g9d75a";
+    $User     = "yojsaybnnlygti";
+    $Port     = "5432";
+    $Password = "25745395931213ab49b31fe4048793c7d6067732b1a032ffcf47473858dcd6a1";
     //以上計12か所イベントごとに要変更
-    #$limit2 =date('n月j日',  strtotime($limit)); 
     #$conn = "host=".$Host." "."port=".$Port." "."dbname=".$Database." "."user=".$User." "."password=".$Password;
     
     //  入力値の引継ぎ参考URL： https://gray-code.com/php/make-the-form-vol4/
@@ -32,13 +24,7 @@
     $_SESSION["input_token"] = $token; //グローバル変数らしい    
     $_SESSION["title"] = $title;
     $_SESSION["Tanto_Address"] = $Tanto_Address;
-   # $_SESSION["zoom"] = $zoom;
     $_SESSION["conncon"] = $conn;
-    //$_SESSION["kaisaibi"] = $kaisaibi;
-    //$_SESSION["limit"] = $limit;
-    //$_SESSION["simekiri"] = $simekiri;
-   # $_SESSION["k_teiin"] = $k_teiin;
-    #$_SESSION["w_teiin"] = $w_teiin;
   ?>
    
  <!DOCTYPE html>  
@@ -103,12 +89,7 @@
                             </select>
                         </td>
                     </tr>
-                    <tr>
-                        <th class="contact-item">備　考</th>
-                        <td class="contact-body">
-                            <textarea name="備考" class="form-textarea" placeholder="何かご意見やご要望・ご質問等があればご記入ください"><?php if(!empty($_POST["備考"])) { echo $_POST["備考"]; }?></textarea>
-                        </td>
-                    </tr>
+                    
                 </table>
 
                 <input class="contact-submit" id="conf" type="submit" name="submit" value="確　認" />
