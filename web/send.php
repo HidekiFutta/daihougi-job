@@ -72,26 +72,26 @@
   <body>
   <p>{$text}　様</p>
   
-  <p>「{$event}」 下記の内容で受付ました。</p>
+  <p>「{$event}」 より下記の内容で受付ました。</p>
   
      ---------------------------------------------------------------
   <ul> 
-  <li>【受付番号】{$number}</li>
-  <li>【氏　名】{$text}</li>
-  <li>【施設名】{$kana}</li>
-  <li>【メール】{$emails}</li>
+  <li>【受付　番号】{$count}</li>
+  <li>【氏　　　名】{$text}</li>
+  <li>【施　設　名】{$kana}</li>
+  <li>【メ　ー　ル】{$emails}</li>
   <li>【大放技番号】{$zipcode}</li>
   <li>【ブロック名】{$radio}</li>
   </ul>
       ---------------------------------------------------------------
   
   <p>・当会は、職業斡旋業務は認められていません。<br>
-  　　 更新日時によって、情報が古い場合がございます。<br>
-       以下の情報より、各自でご確認ください。</p>
+   以下のリンクから、各自でご確認ください。</p>
   <p>・https://www.city.yao.osaka.jp/0000059621.html<br>
-  　 ・http://www.midorigaokahp.jp/recruit/xpoffer.html<br>
-     ・https://hrmos.co/pages/holonics/jobs?category=1484370662128041984
-  <p>・ご不明な点は mail: {$E_Address}<br>
+  ・http://www.midorigaokahp.jp/recruit/xpoffer.html<br>
+  ・https://hrmos.co/pages/holonics/jobs?category=1484370662128041984
+  <p>更新日時によって、情報が古い場合がございます。<br>
+  ・ご不明な点は mail: {$E_Address}<br>
   　までお問い合わせください。</p>
   
   </body>

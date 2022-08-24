@@ -70,14 +70,14 @@
   } 
   for ($i = 0 ; $i < pg_num_rows($result) ; $i++){
       $rows = pg_fetch_array($result, NULL, PGSQL_ASSOC);
-  print('id='.$rows['id']);
+  #print('id='.$rows['id']);
  // print(',count='.$rows['count'].'<br>');
   }
   $a = 1;#$rows['id'];
   
   
-  echo "OKOKOK";
-  echo $a;
+ # echo "OKOKOK";
+ # echo $a;
   
   //https://tokkan.net/php/pos.html
   //pg_query($link, "UPDATE sanka SET count= $a WHERE id = '1'");   
