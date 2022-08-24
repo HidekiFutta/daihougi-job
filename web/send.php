@@ -43,28 +43,28 @@
   $text = h($_SESSION['input_text']);
   $kana = h($_SESSION['所属']);
   $emails = h($_SESSION['email_1']);
-  $keitai = h($_SESSION['keitai']);
-  $tel = h($_SESSION['区分']);
-  $url = h($_SESSION['Nナンバー']);
+  #$keitai = h($_SESSION['keitai']);
+  #$tel = h($_SESSION['区分']);
+  #$url = h($_SESSION['Nナンバー']);
   $zipcode = h($_SESSION['Dナンバー']);
   $radio = h($_SESSION['ブロック']);
-  $checkbox = h($_SESSION['Rナンバー']);
-  $textarea = h($_SESSION['備考']);
-  $number =  rtrim($keitai, '参加')."：".$count;
+ # $checkbox = h($_SESSION['Rナンバー']);
+ # $textarea = h($_SESSION['備考']);
+  #$number =  rtrim($keitai, '参加')."：".$count;
   
   //Web参加と会場参加で案内文を切り分ける：ヒアドキュメント内に表示する文面
-  if( $keitai =="Web参加"){
-    $announce ="<font color='red'>・Web参加の方は次のボタンから参加してください。</font>
-    <br>　　こちらから　⇒　<a href='$ZoomURL'>ミーティングに参加</a>
-    <br>
-    <br>　　ミーティングID: 845 3965 7732
-    <br>　　パスコード: semi0907
-    <br>
-    <br>・<font color='green'>Zoomについて、必ず以下を参照してください。</font>
-    <br>　　ご確認ください　⇒　<a href='https://zoom-info.herokuapp.com/'>Zoomのご案内</a>";}
-  else{
-    $announce ="・COVID-19の感染状況によりWebのみになった場合は、ご連絡いたします。";
-  }
+ # if( $keitai =="Web参加"){
+ #   $announce ="<font color='red'>・Web参加の方は次のボタンから参加してください。</font>
+ #   <br>　　こちらから　⇒　<a href='$ZoomURL'>ミーティングに参加</a>
+ #   <br>
+  #  <br>　　ミーティングID: 845 3965 7732
+  #  <br>　　パスコード: semi0907
+  #  <br>
+  #  <br>・<font color='green'>Zoomについて、必ず以下を参照してください。</font>
+ #   <br>　　ご確認ください　⇒　<a href='https://zoom-info.herokuapp.com/'>Zoomのご案内</a>";}
+ # else{
+ #   $announce ="・COVID-19の感染状況によりWebのみになった場合は、ご連絡いたします。";
+ # }
 
   //自動返信メール本文（ヒアドキュメント）
   $messageUser = <<< EOD
@@ -81,17 +81,11 @@
   <li>【氏　名】{$text}</li>
   <li>【施設名】{$kana}</li>
   <li>【メール】{$emails}</li>
-  <li>【参加形態】{$keitai}</li>
-  <li>【区　分】{$tel}</li>
-  <li>【日放技番号】{$url}</li>
   <li>【大放技番号】{$zipcode}</li>
   <li>【ブロック名】{$radio}</li>
-  <li>【領収書番号】{$checkbox}</li>
-  <li>【備　考】{$textarea}</li>
   </ul>
       ---------------------------------------------------------------
   
-  <p>{$announce}</p>
   <p>・参加形態を変更される場合は、あらためて登録しなおしてください。<br>
   　　 参加者数に制限があるため、再登録が必要です。</p>
   <p>・登録の取り消しやご不明な点は<br>
@@ -116,13 +110,8 @@ HPより以下の登録がありました。
 【氏　　　名】{$text}
 【施　設　名】{$kana}
 【メ　ー　ル】{$emails}
-【参加　形態】{$keitai}
-【区　　　分】{$tel}
-【日放技番号】{$url}
 【大放技番号】{$zipcode}
 【ブロック名】{$radio}
-【領収書番号】{$checkbox}
-【備　　　考】{$textarea}
 
 ----------------------------------------------------
 EOD;
@@ -188,20 +177,20 @@ $isSend = true;
 
   //pg_set_client_encoding($conn, "sjis");
   
-  $result = pg_query($link,'SELECT id, count, web FROM sanka');
-  if (!$result) {
-      die('クエリーが失敗しました。'.pg_last_error());
-  } 
-  for ($i = 0 ; $i < pg_num_rows($result) ; $i++){
-      $rows = pg_fetch_array($result, NULL, PGSQL_ASSOC);
-  }
-  if ($keitai=="会場参加"){
-    $rows = $rows['count'] + 1;
-    pg_query($link, "UPDATE sanka SET count= $rows WHERE id = '1'"); 
-  } else{
-    $rows = $rows['web'] + 1;
-    pg_query($link, "UPDATE sanka SET web= $rows WHERE id = '1'"); 
-  }
+  #$result = pg_query($link,'SELECT id FROM meibo');
+  #if (!$result) {
+  #    die('クエリーが失敗しました。'.pg_last_error());
+  #} 
+  #for ($i = 0 ; $i < pg_num_rows($result) ; $i++){
+  #    $rows = pg_fetch_array($result, NULL, PGSQL_ASSOC);
+  #}
+  #if ($keitai=="会場参加"){
+  #  $rows = $rows['count'] + 1;
+  #  pg_query($link, "UPDATE sanka SET count= $rows WHERE id = '1'"); 
+  #} else{
+  #  $rows = $rows['web'] + 1;
+  #  pg_query($link, "UPDATE sanka SET web= $rows WHERE id = '1'"); 
+  #}
   //参加者名簿
   $result2 = pg_query($link,'SELECT * FROM meibo');
   if (!$result2) {
@@ -211,7 +200,7 @@ $isSend = true;
   $b = $b+1;
   //insert
   $sql = "INSERT INTO meibo 
-  VALUES ($b,$count,'$outputDate','$text','$kana','$emails','$keitai','$tel','$url','$zipcode','$radio','$checkbox','$textarea')";
+  VALUES ($b,$count,'$outputDate','$text','$kana','$emails','$zipcode','$radio')";
 
   $result2_flag = pg_query($link,$sql);
   $close_flag = pg_close($link); 
