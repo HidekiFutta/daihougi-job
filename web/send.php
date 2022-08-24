@@ -172,8 +172,8 @@ $isSend = true;
   if (!$result2) {
       die('クエリーが失敗しました。'.pg_last_error());
   } 
-  for ($i = 0 ; $i < pg_num_rows($result2) ; $i++){
-      $rows = pg_fetch_array($result2, NULL, PGSQL_ASSOC);
+  #for ($i = 0 ; $i < pg_num_rows($result2) ; $i++){
+  #    $rows = pg_fetch_array($result2, NULL, PGSQL_ASSOC);
   $b = pg_num_rows($result2); // 行数確認
   $b = $b+1;
   //insert
