@@ -12,7 +12,7 @@
   
   //参考HP　https://designsupply-web.com/media/programming/1642/
   //任意入力項目の配列が空の場合のエラーメッセージ制御
-  error_reporting(0); //エラー非表示  //composer updateしないとVendorの中身は更新されない
+  //error_reporting(0); //エラー非表示  //composer updateしないとVendorの中身は更新されない
   //error_reporting(E_ALL ^ E_NOTICE);
 
   require '../vendor/autoload.php';
