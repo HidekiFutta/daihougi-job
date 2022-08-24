@@ -12,7 +12,7 @@
   
   //参考HP　https://designsupply-web.com/media/programming/1642/
   //任意入力項目の配列が空の場合のエラーメッセージ制御
-  //error_reporting(0); //エラー非表示  //composer updateしないとVendorの中身は更新されない
+  error_reporting(0); //エラー非表示  //composer updateしないとVendorの中身は更新されない
   //error_reporting(E_ALL ^ E_NOTICE);
 
   require '../vendor/autoload.php';
@@ -54,14 +54,14 @@
   
   //Web参加と会場参加で案内文を切り分ける：ヒアドキュメント内に表示する文面
   
-    $announce ="<font color='red'>・Web参加の方は次のボタンから参加してください。</font>
-    <br>　　こちらから　⇒　<a href='$ZoomURL'>ミーティングに参加</a>
-    <br>
-    <br>　　ミーティングID: 845 3965 7732
-    <br>　　パスコード: semi0907
-    <br>
-    <br>・<font color='green'>Zoomについて、必ず以下を参照してください。</font>
-    <br>　　ご確認ください　⇒　<a href='https://zoom-info.herokuapp.com/'>Zoomのご案内</a>";}
+  $announce ="<font color='red'>・Web参加の方は次のボタンから参加してください。</font>
+  <br>　　こちらから　⇒　<a href='$ZoomURL'>ミーティングに参加</a>
+  <br>
+  <br>　　ミーティングID: 845 3965 7732
+  <br>　　パスコード: semi0907
+  <br>
+  <br>・<font color='green'>Zoomについて、必ず以下を参照してください。</font>
+  <br>　　ご確認ください　⇒　<a href='https://zoom-info.herokuapp.com/'>Zoomのご案内</a>";}
  
 
   //自動返信メール本文（ヒアドキュメント）
