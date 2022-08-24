@@ -20,13 +20,10 @@
   //タイムスタンプ
   date_default_timezone_set('Asia/Tokyo');
   $timeStamp = time();
-  //$week = array('日', '月', '火', '水', '木', '金', '土');
   $dateFormatYMD = date('Y年m月d日',$timeStamp);
   $dateFormatHIS = date('H時i分s秒',$timeStamp);
-  //$weekFormat = "（".$week[date('w',$timeStamp)]."）";
   $outputDate = $dateFormatYMD.$dateFormatHIS;
   $conn = $_SESSION["conncon2"];
-  $ZoomURL = $_SESSION["zoom"];
   $E_Address = $_SESSION["Tanto_Address"];
   //XSS対策用サニタイズ
   
@@ -43,29 +40,9 @@
   $text = h($_SESSION['input_text']);
   $kana = h($_SESSION['所属']);
   $emails = h($_SESSION['email_1']);
-  #$keitai = h($_SESSION['keitai']);
-  #$tel = h($_SESSION['区分']);
-  #$url = h($_SESSION['Nナンバー']);
   $zipcode = h($_SESSION['Dナンバー']);
   $radio = h($_SESSION['ブロック']);
- # $checkbox = h($_SESSION['Rナンバー']);
- # $textarea = h($_SESSION['備考']);
-  #$number =  rtrim($keitai, '参加')."：".$count;
-  
-  //Web参加と会場参加で案内文を切り分ける：ヒアドキュメント内に表示する文面
- # if( $keitai =="Web参加"){
- #   $announce ="<font color='red'>・Web参加の方は次のボタンから参加してください。</font>
- #   <br>　　こちらから　⇒　<a href='$ZoomURL'>ミーティングに参加</a>
- #   <br>
-  #  <br>　　ミーティングID: 845 3965 7732
-  #  <br>　　パスコード: semi0907
-  #  <br>
-  #  <br>・<font color='green'>Zoomについて、必ず以下を参照してください。</font>
- #   <br>　　ご確認ください　⇒　<a href='https://zoom-info.herokuapp.com/'>Zoomのご案内</a>";}
- # else{
- #   $announce ="・COVID-19の感染状況によりWebのみになった場合は、ご連絡いたします。";
- # }
-
+ 
   //自動返信メール本文（ヒアドキュメント）
   $messageUser = <<< EOD
   <html>
@@ -138,22 +115,22 @@ $email = new \SendGrid\Mail\Mail();
       echo 'Caught exception: '. $e->getMessage() ."\n";
   }
 
-$email = new \SendGrid\Mail\Mail();
-  $email->setFrom("itdrive@daihougi.ne.jp", "大放技");
-  $email->setSubject("大放技求人情報受付");
-  $email->addTo("hima71f@yahoo.co.jp", "User");
-  $email->addTo($E_Address, "User"); //担当者のアドレス
-  $email->addContent("text/plain", $messageAdmin);
-  $sendgrid = new \SendGrid(getenv('SENDGRID_API_KEY'));
-  try {
-    //echo "OK2";
-    $response = $sendgrid->send($email);
+#$email = new \SendGrid\Mail\Mail();
+#  $email->setFrom("itdrive@daihougi.ne.jp", "大放技");
+#  $email->setSubject("大放技求人情報受付");
+#  $email->addTo("hima71f@yahoo.co.jp", "User");
+#  $email->addTo($E_Address, "User"); //担当者のアドレス
+#  $email->addContent("text/plain", $messageAdmin);
+#  $sendgrid = new \SendGrid(getenv('SENDGRID_API_KEY'));
+ # try {
+#    //echo "OK2";
+#    $response = $sendgrid->send($email);
     //print $response->statusCode() . "\n";
     //print_r($response->headers());
     //print $response->body() . "\n";
-  } catch (Exception $e) {
-    echo 'Caught exception: '. $e->getMessage() ."\n";
-}
+ # } catch (Exception $e) {
+#    echo 'Caught exception: '. $e->getMessage() ."\n";
+#}
     
 $isSend = true;
   //} else {
@@ -195,6 +172,8 @@ $isSend = true;
   if (!$result2) {
       die('クエリーが失敗しました。'.pg_last_error());
   } 
+  for ($i = 0 ; $i < pg_num_rows($result2) ; $i++){
+      $rows = pg_fetch_array($result2, NULL, PGSQL_ASSOC);
   $b = pg_num_rows($result2); // 行数確認
   $b = $b+1;
   //insert
