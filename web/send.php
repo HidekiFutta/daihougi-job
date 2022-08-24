@@ -86,12 +86,12 @@
       ---------------------------------------------------------------
   
   <p>・当会は、職業斡旋業務は認められていません。<br>
-   以下のリンクから、各自でご確認ください。</p>
+  　 以下のリンクから、各自でご確認ください。</p>
   <p>・https://www.city.yao.osaka.jp/0000059621.html<br>
   ・http://www.midorigaokahp.jp/recruit/xpoffer.html<br>
   ・https://hrmos.co/pages/holonics/jobs?category=1484370662128041984
-  <p>更新日時によって、情報が古い場合がございます。<br>
-  ・ご不明な点は mail: {$E_Address}<br>
+  <p>・更新日時によって、情報が古い場合がございます。
+  <p>・ご不明な点は mail: osaka@daihougi.ne.jp<br>
   　までお問い合わせください。</p>
   
   </body>
@@ -124,7 +124,7 @@ EOD;
 
 $email = new \SendGrid\Mail\Mail();
     $email->setFrom("itdrive@daihougi.ne.jp", "大放技");
-    $email->setSubject("大放技イベント受付");
+    $email->setSubject("大放技求人情報");
     $email->addTo($emails, "User");
     $email->addContent("text/html", $messageUser);
     $sendgrid = new \SendGrid(getenv('SENDGRID_API_KEY'));
@@ -140,7 +140,7 @@ $email = new \SendGrid\Mail\Mail();
 
 $email = new \SendGrid\Mail\Mail();
   $email->setFrom("itdrive@daihougi.ne.jp", "大放技");
-  $email->setSubject("大放技イベント受付");
+  $email->setSubject("大放技求人情報受付");
   $email->addTo("hima71f@yahoo.co.jp", "User");
   $email->addTo($E_Address, "User"); //担当者のアドレス
   $email->addContent("text/plain", $messageAdmin);
@@ -214,7 +214,7 @@ $isSend = true;
   <meta http-equiv="Last-Modified" content="Fri, 3 Dec 2021 04:52:01 GMT">
   <meta http-equiv="Expires" content="Fri, 3 Dec 2021 04:52:06 GMT">
 
-	<title>大放技セミナー申込み完了フォーム</title>
+	<title>大放技イベント申請完了フォーム</title>
   <link rel="shortcut icon" href="/favicon.ico">
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon.ico">
 </head>
@@ -230,14 +230,14 @@ $isSend = true;
 					<td content="" csheight="340" xpos="31" width="566" valign="top" height="340">
 						<div align="center">
 							<p><br>
-								<font size="3">大放技イベントへのお申込み，ありがとうございました．<br>
+								<font size="3">大放技求人情報取得申請，受付完了．<br>
 								</font></p>
-							<p><font size="3">受付内容を【<?php echo h($_SESSION['email_1']); ?>】まで<br>
+							<p><font size="3">現在の求人情報を【<?php echo h($_SESSION['email_1']); ?>】まで<br>
               お送りましたので，内容をご確認下さい．
               
               </font></p>
 						  <p></p>
-							<p>なお，確認メールが届かない場合は，下記までご連絡下さい．<br>
+							<p>なお，メールが届かない場合は，下記までご連絡下さい．<br>
 							</p>
 							<p><br>
 								<br>
