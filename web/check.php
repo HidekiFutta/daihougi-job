@@ -75,9 +75,9 @@
   }
   $a = $rows['id'];
   
-  $b = $rows['count'];
-  echo "OKOKOK";
-  echo $b;
+  #$b = $rows['count'];
+  #echo "OKOKOK";
+  #echo $b;
   
   //https://tokkan.net/php/pos.html
   //pg_query($link, "UPDATE sanka SET count= $a WHERE id = '1'");   
@@ -167,7 +167,7 @@
                 
                 <?php
                   //データを配列に
-                  $list = array ($b,$text_value0,$text_value1, $text_value2, $text_value3, $text_value7,$text_value8,$title);
+                  $list = array ($a,$text_value0,$text_value1, $text_value2, $text_value3, $text_value7,$text_value8,$title);
                   mb_convert_variables('Shift_JIS', 'UTF-8', $list);
                 ?>   
               <?php endif; ?>         

@@ -36,7 +36,7 @@
 
   //メール本文内に表示するデータの変数化
   $event = h($_POST["title"]);//"明日から役立つセミナー";
-  $count = h($_POST["b"]);
+  $count = h($_POST["a"]);
   $text = h($_SESSION['input_text']);
   $kana = h($_SESSION['所属']);
   $emails = h($_SESSION['email_1']);
@@ -82,7 +82,7 @@ HPより以下の登録がありました。
 ----------------------------------------------------
 
 【イベント名】{$event}
-【受付　番号】{$number}
+【受付　番号】{$count}
 【氏　　　名】{$text}
 【施　設　名】{$kana}
 【メ　ー　ル】{$emails}
