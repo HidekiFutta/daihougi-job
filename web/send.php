@@ -36,7 +36,7 @@
 
   //メール本文内に表示するデータの変数化
   $event = h($_POST["title"]);//"明日から役立つセミナー";
-  $count = h($_POST["a"]);
+  $count = h($_POST["b"]);
   $text = h($_SESSION['input_text']);
   $kana = h($_SESSION['所属']);
   $emails = h($_SESSION['email_1']);
