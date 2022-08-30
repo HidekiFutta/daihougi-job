@@ -176,6 +176,7 @@ $isSend = true;
   #    $rows = pg_fetch_array($result2, NULL, PGSQL_ASSOC);
   $b = pg_num_rows($result2); // 行数確認
   $b = $b+1;
+  $count = $b;
   //insert
   $sql = "INSERT INTO meibo 
   VALUES ($b,$count,'$outputDate','$text','$kana','$emails','$zipcode','$radio')";

@@ -68,11 +68,10 @@
                         </td>
                     </tr>
                     
-
                     <tr>
                         <th class="contact-item">大放技番号</th>
                         <td class="contact-body">
-                            <input type="number" name="Dナンバー" id ="dn" required="required"  placeholder="必須"　class="form-text3" value="<?php if( !empty($_POST['Dナンバー']) ){ echo $_POST['Dナンバー']; } ?>"/>
+                            <input type="number" name="Dナンバー" id ="dn" required="required"  placeholder="必須" class="form-text3" value="<?php if( !empty($_POST['Dナンバー']) ){ echo $_POST['Dナンバー']; } ?>"/>
                         </td>
                     </tr>
                     
