@@ -115,22 +115,22 @@ $email = new \SendGrid\Mail\Mail();
       echo 'Caught exception: '. $e->getMessage() ."\n";
   }
 
-#$email = new \SendGrid\Mail\Mail();
-#  $email->setFrom("itdrive@daihougi.ne.jp", "大放技");
-#  $email->setSubject("大放技求人情報受付");
-#  $email->addTo("hima71f@yahoo.co.jp", "User");
+$email = new \SendGrid\Mail\Mail();
+  $email->setFrom("itdrive@daihougi.ne.jp", "大放技");
+  $email->setSubject("大放技求人情報受付");
+  $email->addTo("hima71f@yahoo.co.jp", "User");
 #  $email->addTo($E_Address, "User"); //担当者のアドレス
-#  $email->addContent("text/plain", $messageAdmin);
-#  $sendgrid = new \SendGrid(getenv('SENDGRID_API_KEY'));
- # try {
-#    //echo "OK2";
-#    $response = $sendgrid->send($email);
-    //print $response->statusCode() . "\n";
-    //print_r($response->headers());
-    //print $response->body() . "\n";
- # } catch (Exception $e) {
-#    echo 'Caught exception: '. $e->getMessage() ."\n";
-#}
+  $email->addContent("text/plain", $messageAdmin);
+  $sendgrid = new \SendGrid(getenv('SENDGRID_API_KEY'));
+  try {
+    //echo "OK2";
+    $response = $sendgrid->send($email);
+    print $response->statusCode() . "\n";
+    print_r($response->headers());
+    print $response->body() . "\n";
+  } catch (Exception $e) {
+    echo 'Caught exception: '. $e->getMessage() ."\n";
+  }
     
 $isSend = true;
   //} else {

@@ -73,7 +73,7 @@
   #print('id='.$rows['id']);
  // print(',count='.$rows['count'].'<br>');
   }
-  $a = $rows['id'];
+  $a = $rows['id']+1;
   
   #$b = $rows['count'];
   #echo "OKOKOK";
